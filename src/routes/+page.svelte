@@ -61,7 +61,6 @@
 						r={sizeScale(point.value)}
 						fill="url('#radialGradient')"
 						transition:fade|global={{duration: 1000, delay: i*100 + 500}}
-						
 						/>
 					<g transform="translate({xScale(i)}, {yScale(point.height)})">
 						<text dominant-baseline="middle" text-anchor="middle" class="label"
@@ -78,7 +77,7 @@
 </div>
 
 <style>
-    .container {
+    .container { /* center that thing */
         position: absolute;
         top: 50%;
         left: 50%;
