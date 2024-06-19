@@ -1,7 +1,8 @@
 <script>
-	import data from './data.js'
+	import data from '$lib/data.js'
 	import {scaleLinear} from 'd3-scale'
 	import {extent} from 'd3-array'
+
 	import {draw, fade} from 'svelte/transition'
 	import {onMount} from 'svelte'
 
@@ -13,7 +14,6 @@
 	const yScale = scaleLinear().domain(extent(data.map(d => d.height))).range([height-margins.bottom, margins.top])
 
 	const sizeScale = scaleLinear().domain(extent(data.map(d => d.value))).range([20, 60])
-	// const colorScale = scaleLinear().domain(extent(data.map(d => d.value))).range(["#f3e2e1", "#a11a11"])
 	const colorScale = scaleLinear().domain(extent(data.map(d => d.value))).range(["#e5dbff", "#5f3dc4"])
 
 	const curvyLine =( x1, y1, x2, y2) => {
@@ -22,9 +22,8 @@
 
 	let show = false
 
-
 	onMount(() => {
-		show=true
+		show = true
 	})
 	
 	
